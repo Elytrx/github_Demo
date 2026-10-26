@@ -29,7 +29,7 @@ You can add options to executable code like this
 ggplot(
   data = penguins, mapping = aes(x = flipper_length_mm, y = body_mass_g, color = species)
 ) +
-  geom_point(alpha = 0.7) +
+  geom_point(alpha = 0.8) +
   labs(
     title = "Penguin Size Measurements",
     x = "Flipper Length",
