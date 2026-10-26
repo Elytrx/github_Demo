@@ -1,0 +1,42 @@
+---
+title: "Penguin Analysis"
+format: html
+editor: visual
+---
+
+## Quarto
+
+Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+
+## Running Code
+
+When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+
+```{r}
+library(tidyverse)
+library(palmerpenguins)
+penguins |> 
+  drop_na(bill_length_mm) |>
+  group_by(species) |>
+  summarize(
+    avg_bill_length = mean(bill_length_mm)
+  )
+```
+
+You can add options to executable code like this
+
+```{r}
+ggplot(
+  data = penguins, mapping = aes(x = flipper_length_mm, y = body_mass_g, color = species)
+) +
+  geom_point(alpha = 0.7) +
+  labs(
+    title = "Penguin Size Measurements",
+    x = "Flipper Length",
+    y = "Body Mass"
+  ) +
+  theme_minimal()
+
+```
+
+The `echo: false` option disables the printing of code (only output is displayed).
